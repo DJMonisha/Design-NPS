@@ -23,6 +23,22 @@ body {
   box-shadow: 10px 10px 20px #bebebe, -10px -10px 20px #ffffff; /* Neumorphic shadow */
 }
 
+.logo {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.logo img {
+  width: 80px; /* Adjust logo size */
+  height: auto;
+}
+
+.logo h2 {
+  font-size: 18px;
+  color: #333; /* Adjust text color */
+  margin-top: 10px;
+}
+
 .sidebar ul {
   list-style-type: none;
   padding: 0;
@@ -278,3 +294,4 @@ table tbody tr:hover {
 table tbody td {
   font-size: 14px;
 }
+
