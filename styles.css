@@ -20,9 +20,7 @@ body {
   background-color: #f0f0f3; /* Background color for the sidebar */
   padding: 20px;
   border-radius: 20px; /* Rounded corners */
-  box-shadow: 
-      6px 6px 12px rgba(0, 0, 0, 0.1),
-      -6px -6px 12px rgba(255, 255, 255, 0.5); /* Neumorphic shadow */
+  box-shadow: 10px 10px 20px #bebebe, -10px -10px 20px #ffffff; /* Neumorphic shadow */
 }
 
 .sidebar ul {
@@ -41,18 +39,15 @@ body {
   padding: 20px;
   border-radius: 10px; /* Rounded corners for links */
   background-color: #f0f0f3; /* Background color for links */
-  box-shadow: 
-      4px 4px 8px rgba(0, 0, 0, 0.1),
-      -4px -4px 8px rgba(255, 255, 255, 0.5); /* Neumorphic button effect */
-  transition: box-shadow 0.3s ease; /* Smooth transition for hover effect */
+  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.1), -4px -4px 8px rgba(255, 255, 255, 0.5); /* Neumorphic button effect */
+  transition: all 0.3s ease; /* Smooth transition for hover effect */
 }
 
 .sidebar ul li a:hover {
-  box-shadow: 
-      6px 6px 12px rgba(0, 0, 0, 0.2),
-      -6px -6px 12px rgba(255, 255, 255, 0.7); /* Adjusted shadow on hover */
+  box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.2), -6px -6px 12px rgba(255, 255, 255, 0.7); /* Adjusted shadow on hover */
   background-color: #007bff; /* Background color on hover */
   color: #fff; /* Text color on hover */
+  transform: translateY(-5px); /* Lift effect on hover */
 }
 
 .content {
@@ -60,11 +55,12 @@ body {
   padding-left: 40px;
   background-color: #f0f0f3; /* Content area background color */
   border-radius: 20px; /* Rounded corners for content area */
-  box-shadow: 
-      6px 6px 12px rgba(0, 0, 0, 0.1),
-      -6px -6px 12px rgba(255, 255, 255, 0.5); /* Neumorphic shadow */
+  box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.1), -6px -6px 12px rgba(255, 255, 255, 0.5); /* Neumorphic shadow */
   padding: 20px; /* Padding inside content area */
 }
+
+/* Rest of your CSS for other components */
+
 
 .heading {
   font-size: 24px;
