@@ -1,0 +1,246 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #e0e0e0; /* Background color for the body */
+}
+
+.container {
+  display: flex;
+  max-width: 960px;
+  margin: 40px auto;
+  padding: 40px;
+  background-color: #e0e0e0; /* Match body background color */
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); /* Soft shadow around the container */
+  border-radius: 20px; /* Rounded corners */
+}
+
+.sidebar {
+  width: 250px; /* Adjust width as needed */
+  background-color: #e0e0e0; /* Background color for the sidebar */
+  padding: 20px;
+  border-radius: 20px; /* Rounded corners */
+  box-shadow: 
+      6px 6px 12px rgba(0, 0, 0, 0.1),
+      -6px -6px 12px rgba(255, 255, 255, 0.5); /* Neumorphic shadow */
+}
+
+.sidebar ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.sidebar ul li {
+  margin-bottom: 20px; /* Adjust margin between options */
+}
+
+.sidebar ul li a {
+  display: block;
+  text-decoration: none;
+  color: #333; /* Adjust link color as needed */
+  padding: 20px;
+  border-radius: 10px; /* Rounded corners for links */
+  background-color: #e0e0e0; /* Background color for links */
+  box-shadow: 
+      4px 4px 8px rgba(0, 0, 0, 0.1),
+      -4px -4px 8px rgba(255, 255, 255, 0.5); /* Neumorphic button effect */
+  transition: box-shadow 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.sidebar ul li a:hover {
+  box-shadow: 
+      6px 6px 12px rgba(0, 0, 0, 0.2),
+      -6px -6px 12px rgba(255, 255, 255, 0.7); /* Adjusted shadow on hover */
+}
+
+.content {
+  flex: 1;
+  padding-left: 40px;
+  background-color: #fff; /* Content area background color */
+  border-radius: 20px; /* Rounded corners for content area */
+  box-shadow: 
+      6px 6px 12px rgba(0, 0, 0, 0.1),
+      -6px -6px 12px rgba(255, 255, 255, 0.5); /* Neumorphic shadow */
+  padding: 20px; /* Padding inside content area */
+}
+
+.heading {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333; /* Adjust text color as needed */
+  padding: 20px;
+  border-left: 5px solid #007bff; /* Left border color */
+  margin-bottom: 20px; /* Margin below heading */
+}
+
+.dropdowns {
+  margin-top: 20px;
+  display: flex;
+  gap: 20px; /* Gap between dropdowns */
+}
+
+.dropdown {
+  flex: 1;
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+  background-color: #e0e0e0; /* Background color for dropdown */
+  box-shadow: 
+      4px 4px 8px rgba(0, 0, 0, 0.1),
+      -4px -4px 8px rgba(255, 255, 255, 0.5); /* Neumorphic shadow */
+  appearance: none; /* Remove default dropdown arrow */
+  outline: none;
+  font-size: 16px; /* Adjust font size */
+  color: #333; /* Adjust text color */
+  transition: box-shadow 0.3s ease; /* Smooth transition for focus effect */
+}
+
+.dropdown:focus {
+  box-shadow: 
+      6px 6px 12px rgba(0, 0, 0, 0.2),
+      -6px -6px 12px rgba(255, 255, 255, 0.7); /* Adjusted shadow on focus */
+}
+
+.tabs {
+  display: flex;
+  margin-top: 20px;
+  border-radius: 20px; /* Rounded corners */
+  overflow: hidden;
+  box-shadow: 
+      6px 6px 12px rgba(0, 0, 0, 0.1),
+      -6px -6px 12px rgba(255, 255, 255, 0.5); /* Neumorphic shadow */
+}
+
+.tab {
+  flex: 1;
+  padding: 20px;
+  text-align: center;
+  background-color: #e0e0e0; /* Background color for tabs */
+  color: #333; /* Text color for tabs */
+  cursor: pointer;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.tab.active {
+  background-color: #007bff; /* Active tab background color */
+  color: #fff; /* Active tab text color */
+  box-shadow: 
+      inset 4px 4px 8px rgba(0, 0, 0, 0.1),
+      inset -4px -4px 8px rgba(255, 255, 255, 0.5); /* Inset shadow for active tab */
+}
+
+.tab:hover {
+  background-color: #007bff; /* Hover background color */
+  color: #fff; /* Hover text color */
+}
+
+.table-container {
+  margin-top: 40px; /* Increased margin above table */
+  padding: 20px;
+  background-color: #e0e0e0; /* Background color for the table container */
+  border-radius: 20px; /* Rounded corners */
+  box-shadow: 
+      6px 6px 12px rgba(0, 0, 0, 0.1),
+      -6px -6px 12px rgba(255, 255, 255, 0.5); /* Neumorphic shadow */
+}
+
+.neumorphic-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px; /* Margin below table */
+}
+
+.neumorphic-table th, .neumorphic-table td {
+  padding: 15px; /* Increased padding inside table cells */
+  text-align: left;
+  background-color: #e0e0e0; /* Background color for table cells */
+  box-shadow: 
+      inset 4px 4px 8px rgba(0, 0, 0, 0.1),
+      inset -4px -4px 8px rgba(255, 255, 255, 0.5); /* Neumorphic shadow */
+}
+
+.neumorphic-table th {
+  background-color: #007bff; /* Background color for table headers */
+  color: #fff; /* Text color for table headers */
+}
+
+.download-btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #007bff; /* Background color for the download button */
+  color: #fff; /* Text color for the download button */
+  text-align: center;
+  border: none;
+  border-radius: 10px; /* Rounded corners for the download button */
+  box-shadow: 
+      4px 4px 8px rgba(0, 0, 0, 0.1),
+      -4px -4px 8px rgba(255, 255, 255, 0.5); /* Neumorphic button effect */
+  cursor: pointer;
+  transition: box-shadow 0.3s ease, background-color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.download-btn:hover {
+  background-color: #0056b3; /* Hover background color */
+  box-shadow: 
+      6px 6px 12px rgba(0, 0, 0, 0.2),
+      -6px -6px 12px rgba(255, 255, 255, 0.7); /* Adjusted shadow on hover */
+}
+
+.date-bar {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center; /* Center the date bar horizontally */
+  padding: 10px;
+  background-color: #e0e0e0; /* Match the background color */
+  border-radius: 20px; /* Rounded corners */
+  box-shadow: 
+      6px 6px 12px rgba(0, 0, 0, 0.1),
+      -6px -6px 12px rgba(255, 255, 255, 0.5); /* Neumorphic shadow */
+}
+
+.date-input {
+  width: 200px; /* Adjust width as needed */
+  padding: 10px;
+  border: none;
+  border-radius: 10px; /* Rounded corners */
+  background-color: #e0e0e0; /* Background color for input */
+  box-shadow: 
+      inset 4px 4px 8px rgba(0, 0, 0, 0.1),
+      inset -4px -4px 8px rgba(255, 255, 255, 0.5); /* Neumorphic shadow */
+  font-size: 16px; /* Adjust font size */
+  color: #333; /* Text color */
+  outline: none; /* Remove default outline */
+  text-align: center; /* Center text */
+  transition: box-shadow 0.3s ease; /* Smooth transition for focus effect */
+}
+
+.date-input::placeholder {
+  color: #aaa; /* Placeholder text color */
+}
+
+.date-input:focus {
+  box-shadow: 
+      inset 6px 6px 12px rgba(0, 0, 0, 0.2),
+      inset -6px -6px 12px rgba(255, 255, 255, 0.7); /* Adjusted shadow on focus */
+}
+
+.generate-button {
+  margin-left: 10px; /* Space between the input and the button */
+  padding: 10px 20px;
+  background-color: #007bff; /* Button background color */
+  color: #fff; /* Button text color */
+  border: none;
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 
+      4px 4px 8px rgba(0, 0, 0, 0.1),
+      -4px -4px 8px rgba(255, 255, 255, 0.5); /* Neumorphic shadow */
+  cursor: pointer;
+  transition: box-shadow 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.generate-button:hover {
+  box-shadow: 
+      6px 6px 12px rgba(0, 0, 0, 0.2),
+      -6px -6px 12px rgba(255, 255, 255, 0.7); /* Adjusted shadow on hover */
+}
+

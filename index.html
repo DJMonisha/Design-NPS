@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="styles.css">
+<title>Website with Left Menu, Heading, Dropdowns, Tabs, and Table</title>
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar neumorphic">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Products</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </div>
+        <div class="content">
+            <div class="heading">Welcome to My Website</div>
+            <p>This is a sample website with a neumorphic left menu, heading, and a left border.</p>
+            <p>You can add more content here.</p>
+            <div class="dropdowns">
+                <select class="dropdown">
+                    <option>Select a vendor</option>
+                    <!-- Add more options here -->
+                </select>
+                <select class="dropdown">
+                    <option>Select a family code</option>
+                    <!-- Add more options here -->
+                </select>
+                <select class="dropdown">
+                    <option>Select a site</option>
+                    <!-- Add more options here -->
+                </select>
+            </div>
+            <div class="tabs">
+                <div class="tab active">Summary</div>
+                <div class="tab">Transfers</div>
+            </div>
+            <div class="table-container neumorphic">
+                <table class="neumorphic-table">
+                    <thead>
+                        <tr>
+                            <th>Source</th>
+                            <th>Destination</th>
+                            <th>Week Date</th>
+                            <th>Quantity</th>
+                            <th>SKUs_Count</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>filter data...</td>
+                            <td>filter data...</td>
+                            <td>filter data...</td>
+                            <td>filter data...</td>
+                            <td>filter data...</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <button class="download-btn">Download</button>
+                <div class="date-bar">
+                  <input type="text" placeholder="Date (MM/DD/YY)" class="date-input">
+                  <button class="generate-button">Generate</button>
+                </div>              
+            </div>
+        </div>
+    </div>
+</body>
+</html>
