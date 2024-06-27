@@ -53,25 +53,25 @@ body {
 }
 
 .sidebar ul li {
-  margin-bottom: 20px;
+  margin-bottom: 20px; /* Adjust margin between options */
 }
 
 .sidebar ul li a {
   display: block;
   text-decoration: none;
-  color: #333;
+  color: #333; /* Adjust link color as needed */
   padding: 20px;
-  border-radius: 10px;
-  background-color: #f0f0f3;
-  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.1), -4px -4px 8px rgba(255, 255, 255, 0.5);
-  transition: all 0.3s ease;
+  border-radius: 10px; /* Rounded corners for links */
+  background-color: #f0f0f3; /* Background color for links */
+  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.1), -4px -4px 8px rgba(255, 255, 255, 0.5); /* Neumorphic button effect */
+  transition: all 0.3s ease; /* Smooth transition for hover effect */
 }
 
 .sidebar ul li a:hover {
-  box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.2), -6px -6px 12px rgba(255, 255, 255, 0.7);
-  background-color: #007bff;
-  color: #fff;
-  transform: translateY(-5px);
+  box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.2), -6px -6px 12px rgba(255, 255, 255, 0.7); /* Adjusted shadow on hover */
+  background-color: #007bff; /* Background color on hover */
+  color: #fff; /* Text color on hover */
+  transform: translateY(-5px); /* Lift effect on hover */
 }
 
 .content {
@@ -84,28 +84,26 @@ body {
 }
 
 .heading {
-  font-size: 36px;
-  font-weight: bold;
-  color: #007bff;
-  padding: 20px;
-  border-left: 5px solid #007bff;
+  font-size: 28px;
   margin-bottom: 20px;
+  color: #333;
   background-color: #f0f0f3;
-  box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.1), -6px -6px 12px rgba(255, 255, 255, 0.5);
   border-radius: 20px;
+  box-shadow: 10px 10px 20px #bebebe, -10px -10px 20px #ffffff;
+  padding: 20px;
+  text-align: center;
 }
 
 .dropdowns {
-  margin-top: 20px;
   display: flex;
-  gap: 20px;
+  justify-content: space-between;
+  margin-bottom: 20px;
 }
 
 .dropdown {
-  flex: 1;
   padding: 10px;
-  border-radius: 10px;
   border: none;
+  border-radius: 10px;
   background-color: #f0f0f3;
   box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.1), -4px -4px 8px rgba(255, 255, 255, 0.5);
   appearance: none;
@@ -225,23 +223,19 @@ body {
 }
 
 .generate-button {
-  margin-left: 10px; /* Space between the input and the button */
+  margin-left: 10px;
   padding: 10px 20px;
-  background-color: #007bff; /* Button background color */
-  color: #fff; /* Button text color */
+  background-color: #007bff;
+  color: #fff;
   border: none;
-  border-radius: 10px; /* Rounded corners */
-  box-shadow: 
-      4px 4px 8px rgba(0, 0, 0, 0.1),
-      -4px -4px 8px rgba(255, 255, 255, 0.5); /* Neumorphic shadow */
+  border-radius: 10px;
+  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.1), -4px -4px 8px rgba(255, 255, 255, 0.5);
   cursor: pointer;
-  transition: box-shadow 0.3s ease; /* Smooth transition for hover effect */
+  transition: box-shadow 0.3s ease;
 }
 
 .generate-button:hover {
-  box-shadow: 
-      6px 6px 12px rgba(0, 0, 0, 0.2),
-      -6px -6px 12px rgba(255, 255, 255, 0.7); /* Adjusted shadow on hover */
+  box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.2), -6px -6px 12px rgba(255, 255, 255, 0.7);
 }
 
 .table-container {
@@ -281,3 +275,10 @@ table tbody td {
   font-size: 14px;
 }
 
+.chart-container {
+  margin-top: 40px;
+  padding: 20px;
+  background-color: #f0f0f3;
+  border-radius: 20px;
+  box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.1), -6px -6px 12px rgba(255, 255, 255, 0.5);
+}

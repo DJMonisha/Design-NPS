@@ -6,18 +6,20 @@
 <link rel="stylesheet" href="styles.css">
 <title>Website with Left Menu, Heading, Dropdowns, Tabs, and Table</title>
 <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
     <div class="container">
         <div class="sidebar neumorphic">
             <div class="logo">
-                <img src="logo.jpg" alt="Logo" width="400" height="300">
+                <img src="logo.jpg" alt="Company Logo" width="400" height="300">
                 <h2>NPS</h2>
             </div>
             <ul>
-                <li><a href="#">Network Plan</a></li>
-                <li><a href="#">Demand Flow</a></li>
-                <li><a href="#">Performance Report</a></li>
+                <li><a href="#"><i class="fas fa-network-wired"></i> Network Plan</a></li>
+                <li><a href="#"><i class="fas fa-project-diagram"></i> Demand Flow</a></li>
+                <li><a href="#"><i class="fas fa-chart-line"></i> Performance Report</a></li>
             </ul>
         </div>
         <div class="content">
@@ -25,19 +27,25 @@
             <div class="dropdowns">
                 <select class="dropdown">
                     <option>Select a vendor</option>
-                    <!-- Add more options here -->
+                    <option>Vendor 1</option>
+                    <option>Vendor 2</option>
+                    <option>Vendor 3</option>
                 </select>
                 <select class="dropdown">
                     <option>Select a family code</option>
-                    <!-- Add more options here -->
+                    <option>Code 1</option>
+                    <option>Code 2</option>
+                    <option>Code 3</option>
                 </select>
                 <select class="dropdown">
                     <option>Select a site</option>
-                    <!-- Add more options here -->
+                    <option>Site 1</option>
+                    <option>Site 2</option>
+                    <option>Site 3</option>
                 </select>
             </div>
             <div class="tabs">
-                <div class="tab">Summary</div>
+                <div class="tab active">Summary</div>
                 <div class="tab">Transfers</div>
             </div>
             <div class="table-container neumorphic">
@@ -97,14 +105,55 @@
                 </table>
                 <button class="download-btn">Download</button>
                 <div class="date-bar">
-                  <input type="text" placeholder="Date (MM/DD/YY)" class="date-input">
-                  <button class="generate-button">Generate</button>
-                </div>              
+                    <input type="text" placeholder="Date (MM/DD/YY)" class="date-input">
+                    <button class="generate-button">Generate</button>
+                </div>
+            </div>
+            <div class="chart-container neumorphic">
+                <canvas id="radarChart"></canvas>
             </div>
         </div>
     </div>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        const ctx = document.getElementById('radarChart').getContext('2d');
+        const data = {
+            labels: ['Running', 'Swimming', 'Eating', 'Cycling'],
+            datasets: [{
+                label: 'Activity',
+                data: [20, 10, 4, 2],
+                backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                borderColor: 'rgba(54, 162, 235, 1)',
+                borderWidth: 3,
+                pointBackgroundColor: 'rgba(54, 162, 235, 1)',
+                pointBorderColor: '#fff',
+                pointHoverBackgroundColor: '#fff',
+                pointHoverBorderColor: 'rgba(54, 162, 235, 1)'
+            }]
+        };
+        const config = {
+            type: 'radar',
+            data: data,
+            options: {
+                elements: {
+                    line: {
+                        borderWidth: 3
+                    }
+                },
+                scales: {
+                    r: {
+                        angleLines: {
+                            display: false
+                        },
+                        suggestedMin: 0,
+                        suggestedMax: 25
+                    }
+                }
+            }
+        };
+        new Chart(ctx, config);
+    </script>
 </body>
 </html>
