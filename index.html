@@ -4,7 +4,6 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="styles.css">
-<title>Website with Left Menu, Heading, Dropdowns, Tabs, and Table</title>
 <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
@@ -13,7 +12,7 @@
     <div class="container">
         <div class="sidebar neumorphic">
             <div class="logo">
-                <img src="logo.jpg" alt="Company Logo" width="400" height="300">
+                <img src="logo1.png" alt="Company Logo" width="400" height="300">
                 <h2>NPS</h2>
             </div>
             <ul>
@@ -45,7 +44,7 @@
                 </select>
             </div>
             <div class="tabs">
-                <div class="tab active">Summary</div>
+                <div class="tab">Summary</div>
                 <div class="tab">Transfers</div>
             </div>
             <div class="table-container neumorphic">
@@ -63,54 +62,55 @@
                     <tbody>
                         <tr>
                             <td>1</td>
-                            <td>Warehouse A</td>
-                            <td>Store 1</td>
-                            <td>19 April, 2024</td>
-                            <td>1000</td>
-                            <td>1</td>
+                            <td>USA</td>
+                            <td>Canada</td>
+                            <td>10 January, 2024</td>
+                            <td>900</td>
+                            <td>2</td>
                         </tr>
                         <tr>
                             <td>2</td>
-                            <td>Warehouse B</td>
-                            <td>Store 2</td>
-                            <td>01 June, 2024</td>
-                            <td>1500</td>
-                            <td>15</td>
+                            <td>India</td>
+                            <td>Pakistan</td>
+                            <td>15 February, 2024</td>
+                            <td>2000</td>
+                            <td>20</td>
                         </tr>
                         <tr>
                             <td>3</td>
-                            <td>Germany</td>
-                            <td>France</td>
-                            <td>12 May, 2024</td>
-                            <td>1200</td>
-                            <td>5</td>
+                            <td>Brazil</td>
+                            <td>Argentina</td>
+                            <td>25 March, 2024</td>
+                            <td>1600</td>
+                            <td>6</td>
                         </tr>
                         <tr>
                             <td>4</td>
-                            <td>Italy</td>
-                            <td>Spain</td>
-                            <td>23 May, 2024</td>
-                            <td>1100</td>
-                            <td>10</td>
+                            <td>Japan</td>
+                            <td>China</td>
+                            <td>05 April, 2024</td>
+                            <td>1400</td>
+                            <td>12</td>
                         </tr>
                         <tr>
                             <td>5</td>
-                            <td>Canada</td>
-                            <td>Mexico</td>
-                            <td>14 June, 2024</td>
-                            <td>1300</td>
-                            <td>8</td>
+                            <td>UK</td>
+                            <td>Australia</td>
+                            <td>30 June, 2024</td>
+                            <td>1700</td>
+                            <td>9</td>
                         </tr>
+                        
                     </tbody>
                 </table>
-                <button class="download-btn">Download</button>
-                <div class="date-bar">
-                    <input type="text" placeholder="Date (MM/DD/YY)" class="date-input">
-                    <button class="generate-button">Generate</button>
-                </div>
+                <button class="download-btn" onclick="downloadCSV()">Download</button>
             </div>
             <div class="chart-container neumorphic">
                 <canvas id="radarChart"></canvas>
+            </div>
+            <div class="date-bar">
+                <input type="text" placeholder="Date (MM/DD/YY)" class="date-input">
+                <button class="generate-button">Generate</button>
             </div>
         </div>
     </div>
@@ -120,7 +120,7 @@
     <script>
         const ctx = document.getElementById('radarChart').getContext('2d');
         const data = {
-            labels: ['Running', 'Swimming', 'Eating', 'Cycling'],
+            labels: ['India', 'Brazil', 'Quantity', 'Count'],
             datasets: [{
                 label: 'Activity',
                 data: [20, 10, 4, 2],
@@ -154,6 +154,24 @@
             }
         };
         new Chart(ctx, config);
+        function downloadCSV() {
+            const rows = document.querySelectorAll("table tr");
+            let csvContent = "data:text/csv;charset=utf-8,";
+
+            rows.forEach(row => {
+                const cols = row.querySelectorAll("td, th");
+                const rowData = Array.from(cols).map(col => col.innerText).join(",");
+                csvContent += rowData + "\r\n";
+            });
+
+            const encodedUri = encodeURI(csvContent);
+            const link = document.createElement("a");
+            link.setAttribute("href", encodedUri);
+            link.setAttribute("download", "table_data.csv");
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        }
     </script>
 </body>
 </html>
