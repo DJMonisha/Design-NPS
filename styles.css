@@ -2,25 +2,33 @@ body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #f0f0f3; /* Light background for contrast */
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f0f0f3;
 }
 
 .container {
   display: flex;
+  width: 90%;
+  height: 90%;
   max-width: 1200px;
   margin: 40px auto;
   padding: 40px;
-  background-color: #f0f0f3; /* Match body background color */
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); /* Soft shadow around the container */
-  border-radius: 20px; /* Rounded corners */
+  background-color: #f0f0f3;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
+  overflow: auto;
 }
 
 .sidebar {
-  width: 250px; /* Adjust width as needed */
-  background-color: #f0f0f3; /* Background color for the sidebar */
+  width: 250px;
+  background-color: #f0f0f3;
   padding: 20px;
-  border-radius: 20px; /* Rounded corners */
-  box-shadow: 10px 10px 20px #bebebe, -10px -10px 20px #ffffff; /* Neumorphic shadow */
+  border-radius: 20px;
+  box-shadow: 10px 10px 20px #bebebe, -10px -10px 20px #ffffff;
 }
 
 .logo {
@@ -29,13 +37,13 @@ body {
 }
 
 .logo img {
-  width: 80px; /* Adjust logo size */
+  width: 80px;
   height: auto;
 }
 
 .logo h2 {
   font-size: 18px;
-  color: #333; /* Adjust text color */
+  color: #333;
   margin-top: 10px;
 }
 
@@ -45,52 +53,52 @@ body {
 }
 
 .sidebar ul li {
-  margin-bottom: 20px; /* Adjust margin between options */
+  margin-bottom: 20px;
 }
 
 .sidebar ul li a {
   display: block;
   text-decoration: none;
-  color: #333; /* Adjust link color as needed */
+  color: #333;
   padding: 20px;
-  border-radius: 10px; /* Rounded corners for links */
-  background-color: #f0f0f3; /* Background color for links */
-  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.1), -4px -4px 8px rgba(255, 255, 255, 0.5); /* Neumorphic button effect */
-  transition: all 0.3s ease; /* Smooth transition for hover effect */
+  border-radius: 10px;
+  background-color: #f0f0f3;
+  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.1), -4px -4px 8px rgba(255, 255, 255, 0.5);
+  transition: all 0.3s ease;
 }
 
 .sidebar ul li a:hover {
-  box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.2), -6px -6px 12px rgba(255, 255, 255, 0.7); /* Adjusted shadow on hover */
-  background-color: #007bff; /* Background color on hover */
-  color: #fff; /* Text color on hover */
-  transform: translateY(-5px); /* Lift effect on hover */
+  box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.2), -6px -6px 12px rgba(255, 255, 255, 0.7);
+  background-color: #007bff;
+  color: #fff;
+  transform: translateY(-5px);
 }
 
 .content {
   flex: 1;
   padding-left: 40px;
-  background-color: #f0f0f3; /* Content area background color */
-  border-radius: 20px; /* Rounded corners for content area */
-  box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.1), -6px -6px 12px rgba(255, 255, 255, 0.5); /* Neumorphic shadow */
-  padding: 20px; /* Padding inside content area */
+  background-color: #f0f0f3;
+  border-radius: 20px;
+  box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.1), -6px -6px 12px rgba(255, 255, 255, 0.5);
+  padding: 20px;
 }
 
-/* Rest of your CSS for other components */
-
-
 .heading {
-  font-size: 24px;
+  font-size: 36px;
   font-weight: bold;
-  color: #007bff; /* Adjust text color as needed */
+  color: #007bff;
   padding: 20px;
-  border-left: 5px solid #007bff; /* Left border color */
-  margin-bottom: 20px; /* Margin below heading */
+  border-left: 5px solid #007bff;
+  margin-bottom: 20px;
+  background-color: #f0f0f3;
+  box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.1), -6px -6px 12px rgba(255, 255, 255, 0.5);
+  border-radius: 20px;
 }
 
 .dropdowns {
   margin-top: 20px;
   display: flex;
-  gap: 20px; /* Gap between dropdowns */
+  gap: 20px;
 }
 
 .dropdown {
@@ -98,144 +106,122 @@ body {
   padding: 10px;
   border-radius: 10px;
   border: none;
-  background-color: #f0f0f3; /* Background color for dropdown */
-  box-shadow: 
-      4px 4px 8px rgba(0, 0, 0, 0.1),
-      -4px -4px 8px rgba(255, 255, 255, 0.5); /* Neumorphic shadow */
-  appearance: none; /* Remove default dropdown arrow */
+  background-color: #f0f0f3;
+  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.1), -4px -4px 8px rgba(255, 255, 255, 0.5);
+  appearance: none;
   outline: none;
-  font-size: 16px; /* Adjust font size */
-  color: #333; /* Adjust text color */
-  transition: box-shadow 0.3s ease; /* Smooth transition for focus effect */
+  font-size: 16px;
+  color: #333;
+  transition: box-shadow 0.3s ease;
 }
 
 .dropdown:focus {
-  box-shadow: 
-      6px 6px 12px rgba(0, 0, 0, 0.2),
-      -6px -6px 12px rgba(255, 255, 255, 0.7); /* Adjusted shadow on focus */
+  box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.2), -6px -6px 12px rgba(255, 255, 255, 0.7);
 }
 
 .tabs {
   display: flex;
   margin-top: 20px;
-  border-radius: 20px; /* Rounded corners */
+  border-radius: 20px;
   overflow: hidden;
-  box-shadow: 
-      6px 6px 12px rgba(0, 0, 0, 0.1),
-      -6px -6px 12px rgba(255, 255, 255, 0.5); /* Neumorphic shadow */
+  box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.1), -6px -6px 12px rgba(255, 255, 255, 0.5);
 }
 
 .tab {
   flex: 1;
   padding: 15px;
   text-align: center;
-  background-color: #f0f0f3; /* Background color for tabs */
-  color: #333; /* Text color for tabs */
+  background-color: #f0f0f3;
+  color: #333;
   cursor: pointer;
-  transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effect */
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .tab.active {
-  background-color: #007bff; /* Active tab background color */
-  color: #fff; /* Active tab text color */
-  box-shadow: 
-      inset 4px 4px 8px rgba(0, 0, 0, 0.1),
-      inset -4px -4px 8px rgba(255, 255, 255, 0.5); /* Inset shadow for active tab */
+  background-color: #007bff;
+  color: #fff;
+  box-shadow: inset 4px 4px 8px rgba(0, 0, 0, 0.1), inset -4px -4px 8px rgba(255, 255, 255, 0.5);
 }
 
 .tab:hover {
-  background-color: #007bff; /* Hover background color */
-  color: #fff; /* Hover text color */
+  background-color: #0056b3;
+  color: #fff;
 }
 
 .table-container {
-  margin-top: 40px; /* Increased margin above table */
+  margin-top: 40px;
   padding: 20px;
-  background-color: #f0f0f3; /* Background color for the table container */
-  border-radius: 20px; /* Rounded corners */
-  box-shadow: 
-      6px 6px 12px rgba(0, 0, 0, 0.1),
-      -6px -6px 12px rgba(255, 255, 255, 0.5); /* Neumorphic shadow */
+  background-color: #f0f0f3;
+  border-radius: 20px;
+  box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.1), -6px -6px 12px rgba(255, 255, 255, 0.5);
 }
 
 .neumorphic-table {
   width: 100%;
   border-collapse: collapse;
-  margin-bottom: 20px; /* Margin below table */
+  margin-bottom: 20px;
 }
 
 .neumorphic-table th, .neumorphic-table td {
-  padding: 15px; /* Increased padding inside table cells */
+  padding: 15px;
   text-align: left;
-  background-color: #f0f0f3; /* Background color for table cells */
-  box-shadow: 
-      inset 4px 4px 8px rgba(0, 0, 0, 0.1),
-      inset -4px -4px 8px rgba(255, 255, 255, 0.5); /* Neumorphic shadow */
+  background-color: #f0f0f3;
+  box-shadow: inset 4px 4px 8px rgba(0, 0, 0, 0.1), inset -4px -4px 8px rgba(255, 255, 255, 0.5);
 }
 
 .neumorphic-table th {
-  background-color: #007bff; /* Background color for table headers */
-  color: #fff; /* Text color for table headers */
+  background-color: #007bff;
+  color: #fff;
 }
 
 .download-btn {
   display: inline-block;
   padding: 10px 20px;
-  background-color: #007bff; /* Background color for the download button */
-  color: #fff; /* Text color for the download button */
+  background-color: #007bff;
+  color: #fff;
   text-align: center;
   border: none;
-  border-radius: 10px; /* Rounded corners for the download button */
-  box-shadow: 
-      4px 4px 8px rgba(0, 0, 0, 0.1),
-      -4px -4px 8px rgba(255, 255, 255, 0.5); /* Neumorphic button effect */
+  border-radius: 10px;
+  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.1), -4px -4px 8px rgba(255, 255, 255, 0.5);
   cursor: pointer;
-  transition: box-shadow 0.3s ease, background-color 0.3s ease; /* Smooth transition for hover effect */
+  transition: box-shadow 0.3s ease, background-color 0.3s ease;
 }
 
 .download-btn:hover {
-  background-color: #0056b3; /* Hover background color */
-  box-shadow: 
-      6px 6px 12px rgba(0, 0, 0, 0.2),
-      -6px -6px 12px rgba(255, 255, 255, 0.7); /* Adjusted shadow on hover */
+  background-color: #0056b3;
+  box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.2), -6px -6px 12px rgba(255, 255, 255, 0.7);
 }
 
 .date-bar {
   margin-top: 20px;
   display: flex;
-  justify-content: center; /* Center the date bar horizontally */
+  justify-content: center;
   padding: 10px;
-  background-color: #f0f0f3; /* Match the background color */
-  border-radius: 20px; /* Rounded corners */
-  box-shadow: 
-      6px 6px 12px rgba(0, 0, 0, 0.1),
-      -6px -6px 12px rgba(255, 255, 255, 0.5); /* Neumorphic shadow */
+  background-color: #f0f0f3;
+  border-radius: 20px;
+  box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.1), -6px -6px 12px rgba(255, 255, 255, 0.5);
 }
 
 .date-input {
-  width: 200px; /* Adjust width as needed */
+  width: 200px;
   padding: 10px;
   border: none;
-  border-radius: 10px; /* Rounded corners */
-  background-color: #f0f0f3; /* Background color for input */
-  box-shadow: 
-      inset 4px 4px 8px rgba(0, 0, 0, 0.1),
-      inset -4px -4px 8px rgba(255, 255, 255, 0.5); /* Neumorphic shadow */
-  font-size: 16px; /* Adjust font size */
-  color: #333; /* Text color */
-  outline: none; /* Remove default outline */
-  text-align: center; /* Center text */
-  transition: box-shadow 0.3s ease; /* Smooth transition for focus effect */
+  border-radius: 10px;
+  background-color: #f0f0f3;
+  box-shadow: inset 4px 4px 8px rgba(0, 0, 0, 0.1), inset -4px -4px 8px rgba(255, 255, 255, 0.5);
+  font-size: 16px;
+  color: #333;
+  outline: none;
+  text-align: center;
+  transition: box-shadow 0.3s ease;
 }
 
 .date-input::placeholder {
-  color: #aaa; /* Placeholder text color */
+  color: #aaa;
 }
 
 .date-input:focus {
-  box-shadow: 
-      inset 6px 6px 12px rgba(0, 0, 0, 0.2),
-      inset -6px -6px 12px rgba(255, 255, 255, 0.7); /* Adjusted shadow on focus */
+  box-shadow: inset 6px 6px 12px rgba(0, 0, 0, 0.2), inset -6px -6px 12px rgba(255, 255, 255, 0.7);
 }
 
 .generate-button {
