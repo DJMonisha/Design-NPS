@@ -23,25 +23,26 @@
         <div class="content">
             <div class="heading">Network Planning System</div>
             <div class="dropdowns">
-                <select class="dropdown">
-                    <option>Select a vendor</option>
+                <select id="selected-option" class="dropdown">
+                    <option value="" disabled selected>Select a vendor</option>
                     <option>Vendor 1</option>
                     <option>Vendor 2</option>
                     <option>Vendor 3</option>
                 </select>
-                <select class="dropdown">
-                    <option>Select a family code</option>
+                <select id="selected-option" class="dropdown">
+                    <option value="" disabled selected>Select a family code</option>
                     <option>Code 1</option>
                     <option>Code 2</option>
                     <option>Code 3</option>
                 </select>
-                <select class="dropdown">
-                    <option>Select a site</option>
+                <select id="selected-option" class="dropdown">
+                    <option value="" disabled selected>Select a site</option>
                     <option>Site 1</option>
                     <option>Site 2</option>
                     <option>Site 3</option>
                 </select>
             </div>
+            
             <div class="tabs">
                 <div class="tab">Summary</div>
                 <div class="tab">Transfers</div>
@@ -115,7 +116,6 @@
     </div>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script>
         const ctx = document.getElementById('radarChart').getContext('2d');
         const data = {

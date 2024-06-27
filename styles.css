@@ -110,18 +110,26 @@ body {
   padding: 10px;
   border: none;
   border-radius: 10px;
+  transition: box-shadow 0.3s ease, transform 0.3s ease; /* Added transform for hover effect */
   background-color: #f0f0f3;
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.1), -4px -4px 8px rgba(255, 255, 255, 0.5);
   appearance: none;
   outline: none;
   font-size: 16px;
-  color: #0e0c0c;
-  transition: box-shadow 0.3s ease;
+  color: #646161;
+  position: relative; /* Required for styling options */
+  z-index: 1; /* Ensure options are above other content */
 }
 
 .dropdown:focus {
   box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.2), -6px -6px 12px rgba(255, 255, 255, 0.7);
+  transform: translateY(-3px); /* Lift effect on focus */
+}
+
+.dropdown option:hover {
+  background-color: #686b6d; /* Background color on hover */
+  color: #fff; /* Text color on hover */
 }
 
 .tabs {
