@@ -1,6 +1,5 @@
 import dash
-from dash import dcc, html
-from dash.dependencies import Input, Output
+from dash import dcc, html, Input, Output
 import base64
 
 # Initialize the Dash application
@@ -10,19 +9,11 @@ app = dash.Dash(__name__)
 external_stylesheets = [
     'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css',
     'https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css',
-    'styles.css'
+    '/static/style.css'  # Adjust the path to where your style.css is hosted
 ]
 
-external_scripts = [
-    'https://cdn.jsdelivr.net/npm/chart.js'
-]
-
-# Set external CSS and JavaScript
-for stylesheet in external_stylesheets:
-    app.css.append_css({'external_url': stylesheet})
-
-for script in external_scripts:
-    app.scripts.append_script({'external_url': script})
+# Set external CSS
+app.css.append_css({'external_url': external_stylesheets})
 
 # Define the layout of your Dash app
 app.layout = html.Div([
@@ -163,27 +154,6 @@ def update_chart(selected_vendor, selected_code, selected_site):
     }
 
 
-# Callback to download CSV
-@app.callback(
-    Output('download-btn', 'n_clicks'),
-    Input('download-btn', 'n_clicks')
-)
-def download_csv(n_clicks):
-    if n_clicks:
-        csv_string = "S.No,Source,Destination,Week Date,Quantity,SKUs_Count\n" \
-                     "1,USA,Canada,10 January, 2024,900,2\n" \
-                     "2,India,Pakistan,15 February, 2024,2000,20\n" \
-                     "3,Brazil,Argentina,25 March, 2024,1600,6\n" \
-                     "4,Japan,China,05 April, 2024,1400,12\n" \
-                     "5,UK,Australia,30 June, 2024,1700,9\n"
-
-        csv_data = "data:text/csv;charset=utf-8," + csv_string
-        return dcc.send_file(
-            csv_data.encode(),
-            filename="table_data.csv",
-            mimetype='text/csv'
-        )
-
-
+# Run the Dash Application
 if __name__ == '__main__':
     app.run_server(debug=True)
