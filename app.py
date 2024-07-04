@@ -1,5 +1,6 @@
 import dash
 from dash import dcc, html, Input, Output
+import pandas as pd
 import base64
 
 # Initialize the Dash application
@@ -13,14 +14,21 @@ external_stylesheets = [
 ]
 
 # Set external CSS
-app.css.append_css({'external_url': external_stylesheets})
+for sheet in external_stylesheets:
+    app.css.append_css({'external_url': sheet})
+
+# Load CSV data
+df = pd.read_csv('data.csv')  # Update with your CSV file path
+
+# Define pagination parameters
+PAGE_SIZE = 5
 
 # Define the layout of your Dash app
 app.layout = html.Div([
     html.Div(className='container', children=[
         html.Div(className='sidebar neumorphic', children=[
             html.Div(className='logo', children=[
-                html.Img(src='logo1.png', alt='Company Logo', width=400, height=300),
+                html.Img(src='/assets/logo1.png', alt='Company Logo', width=400, height=300),
                 html.H2('NPS')
             ]),
             html.Ul(children=[
@@ -56,7 +64,7 @@ app.layout = html.Div([
                 html.Div(className='tab', children='Transfers')
             ]),
             html.Div(className='table-container neumorphic', children=[
-                html.Table(className='table table-striped', children=[
+                html.Table(className='table table-striped', id='datatable', children=[
                     html.Thead(children=[
                         html.Tr([
                             html.Th('S.No'),
@@ -67,48 +75,30 @@ app.layout = html.Div([
                             html.Th('SKUs_Count')
                         ])
                     ]),
-                    html.Tbody(children=[
-                        html.Tr([
-                            html.Td('1'),
-                            html.Td('USA'),
-                            html.Td('Canada'),
-                            html.Td('10 January, 2024'),
-                            html.Td('900'),
-                            html.Td('2')
-                        ]),
-                        html.Tr([
-                            html.Td('2'),
-                            html.Td('India'),
-                            html.Td('Pakistan'),
-                            html.Td('15 February, 2024'),
-                            html.Td('2000'),
-                            html.Td('20')
-                        ]),
-                        html.Tr([
-                            html.Td('3'),
-                            html.Td('Brazil'),
-                            html.Td('Argentina'),
-                            html.Td('25 March, 2024'),
-                            html.Td('1600'),
-                            html.Td('6')
-                        ]),
-                        html.Tr([
-                            html.Td('4'),
-                            html.Td('Japan'),
-                            html.Td('China'),
-                            html.Td('05 April, 2024'),
-                            html.Td('1400'),
-                            html.Td('12')
-                        ]),
-                        html.Tr([
-                            html.Td('5'),
-                            html.Td('UK'),
-                            html.Td('Australia'),
-                            html.Td('30 June, 2024'),
-                            html.Td('1700'),
-                            html.Td('9')
-                        ]),
-                    ])
+                    html.Tbody(id='table-body')
+                ]),
+                html.Div(id='datatable-container', children=[
+                    dcc.Input(id='datatable-filter', type='text', placeholder='Filter table data...'),
+                    dcc.RadioItems(
+                        id='datatable-pagination-mode',
+                        options=[
+                            {'label': 'Display all rows', 'value': 'all'},
+                            {'label': 'Paginate rows', 'value': 'paginate'}
+                        ],
+                        value='paginate',
+                        labelStyle={'display': 'inline-block', 'margin-right': '10px'}
+                    ),
+                    dcc.Dropdown(
+                        id='datatable-pagination-dropdown',
+                        options=[
+                            {'label': str(i), 'value': str(i)}
+                            for i in [5, 10, 15, 20]
+                        ],
+                        value='5',
+                        clearable=False,
+                        style={'width': '90px'}
+                    ),
+                    html.Div(id='datatable-pagination')
                 ]),
                 html.Button('Download', className='download-btn', id='download-btn')
             ]),
@@ -122,6 +112,33 @@ app.layout = html.Div([
         ])
     ])
 ])
+
+
+# Callback to update the table based on filter and pagination
+@app.callback(
+    Output('table-body', 'children'),
+    Output('datatable-pagination', 'children'),
+    Input('datatable-filter', 'value'),
+    Input('datatable-pagination-mode', 'value'),
+    Input('datatable-pagination-dropdown', 'value')
+)
+def update_table(filter_value, mode, page_size):
+    if filter_value is None:
+        filtered_df = df
+    else:
+        filtered_df = df[df.apply(lambda row: filter_value in row.values, axis=1)]
+
+    if mode == 'paginate':
+        pagination = html.Div([
+            html.P(f'Displaying {min(len(filtered_df), int(page_size))} of {len(filtered_df)} entries')
+        ])
+        return filtered_df.iloc[0:int(page_size)].apply(
+            lambda row: html.Tr([html.Td(cell) for cell in row]), axis=1
+        ), pagination
+    else:
+        return filtered_df.apply(
+            lambda row: html.Tr([html.Td(cell) for cell in row]), axis=1
+        ), None
 
 
 # Callback to update the chart based on dropdown selection

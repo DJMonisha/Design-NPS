@@ -1,0 +1,273 @@
+
+.container {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 40px;
+  background-color: #f0f0f3;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
+  overflow: auto;
+}
+
+.sidebar {
+  width: 250px;
+  background-color: #f0f0f3;
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 10px 10px 20px #bebebe, -10px -10px 20px #ffffff;
+}
+
+.logo {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.logo img {
+  width: 80px;
+  height: auto;
+}
+
+.logo h2 {
+  font-size: 18px;
+  color: #333;
+  margin-top: 10px;
+}
+
+.sidebar ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.sidebar ul li {
+  margin-bottom: 20px; /* Adjust margin between options */
+}
+
+.sidebar ul li a {
+  display: block;
+  text-decoration: none;
+  color: #333; /* Adjust link color as needed */
+  padding: 20px;
+  border-radius: 10px; /* Rounded corners for links */
+  background-color: #f0f0f3; /* Background color for links */
+  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.1), -4px -4px 8px rgba(255, 255, 255, 0.5); /* Neumorphic button effect */
+  transition: all 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.sidebar ul li a:hover {
+  box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.2), -6px -6px 12px rgba(255, 255, 255, 0.7); /* Adjusted shadow on hover */
+  background-color: #007bff; /* Background color on hover */
+  color: #fff; /* Text color on hover */
+  transform: translateY(-5px); /* Lift effect on hover */
+}
+
+.content {
+  flex: 1;
+  padding-left: 40px;
+  background-color: #f0f0f3;
+  border-radius: 20px;
+  box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.1), -6px -6px 12px rgba(255, 255, 255, 0.5);
+  padding: 20px;
+}
+
+.heading {
+  font-size: 28px;
+  margin-bottom: 20px;
+  color: #333;
+  background-color: #f0f0f3;
+  border-radius: 20px;
+  box-shadow: 10px 10px 20px #bebebe, -10px -10px 20px #ffffff;
+  padding: 20px;
+  text-align: center;
+}
+
+.dropdowns {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.dropdown {
+  padding: 10px;
+  border: none;
+  border-radius: 10px;
+  background-color: #f0f0f3;
+  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.1), -4px -4px 8px rgba(255, 255, 255, 0.5);
+  appearance: none;
+  outline: none;
+  font-size: 16px;
+  color: #333;
+  transition: box-shadow 0.3s ease;
+}
+
+.dropdown:focus {
+  box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.2), -6px -6px 12px rgba(255, 255, 255, 0.7);
+}
+
+.tabs {
+  display: flex;
+  margin-top: 20px;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.1), -6px -6px 12px rgba(255, 255, 255, 0.5);
+}
+
+.tab {
+  flex: 1;
+  padding: 15px;
+  text-align: center;
+  background-color: #f0f0f3;
+  color: #333;
+  cursor: pointer;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tab.active {
+  background-color: #007bff;
+  color: #fff;
+  box-shadow: inset 4px 4px 8px rgba(0, 0, 0, 0.1), inset -4px -4px 8px rgba(255, 255, 255, 0.5);
+}
+
+.tab:hover {
+  background-color: #0056b3;
+  color: #fff;
+}
+
+.table-container {
+  margin-top: 40px;
+  padding: 20px;
+  background-color: #f0f0f3;
+  border-radius: 20px;
+  box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.1), -6px -6px 12px rgba(255, 255, 255, 0.5);
+}
+
+.neumorphic-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+.neumorphic-table th, .neumorphic-table td {
+  padding: 15px;
+  text-align: left;
+  background-color: #f0f0f3;
+  box-shadow: inset 4px 4px 8px rgba(0, 0, 0, 0.1), inset -4px -4px 8px rgba(255, 255, 255, 0.5);
+}
+
+.neumorphic-table th {
+  background-color: #007bff;
+  color: #fff;
+}
+
+.download-btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  text-align: center;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.1), -4px -4px 8px rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+  transition: box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+.download-btn:hover {
+  background-color: #0056b3;
+  box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.2), -6px -6px 12px rgba(255, 255, 255, 0.7);
+}
+
+.date-bar {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+  background-color: #f0f0f3;
+  border-radius: 20px;
+  box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.1), -6px -6px 12px rgba(255, 255, 255, 0.5);
+}
+
+.date-input {
+  width: 200px;
+  padding: 10px;
+  border: none;
+  border-radius: 10px;
+  background-color: #f0f0f3;
+  box-shadow: inset 4px 4px 8px rgba(0, 0, 0, 0.1), inset -4px -4px 8px rgba(255, 255, 255, 0.5);
+  font-size: 16px;
+  color: #333;
+  outline: none;
+  text-align: center;
+  transition: box-shadow 0.3s ease;
+}
+
+.date-input::placeholder {
+  color: #aaa;
+}
+
+.date-input:focus {
+  box-shadow: inset 6px 6px 12px rgba(0, 0, 0, 0.2), inset -6px -6px 12px rgba(255, 255, 255, 0.7);
+}
+
+.generate-button {
+  margin-left: 10px;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.1), -4px -4px 8px rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+  transition: box-shadow 0.3s ease;
+}
+
+.generate-button:hover {
+  box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.2), -6px -6px 12px rgba(255, 255, 255, 0.7);
+}
+
+.table-container {
+  background: #e0e0e0;
+  border-radius: 20px;
+  box-shadow: 10px 10px 30px #bebebe,
+              -10px -10px 30px #ffffff;
+  padding: 20px;
+  overflow-x: auto;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+table th, table td {
+  padding: 12px 15px;
+  text-align: left;
+}
+table thead th {
+  background: #e0e0e0;
+  box-shadow: inset 5px 5px 10px #bebebe,
+              inset -5px -5px 10px #ffffff;
+  font-size: 16px;
+}
+table tbody tr {
+  background: #e0e0e0;
+  border-radius: 12px;
+  box-shadow: 5px 5px 10px #bebebe,
+              -5px -5px 10px #ffffff;
+  transition: all 0.2s ease;
+}
+table tbody tr:hover {
+  box-shadow: inset 5px 5px 10px #bebebe,
+              inset -5px -5px 10px #ffffff;
+}
+table tbody td {
+  font-size: 14px;
+}
+
+.chart-container {
+  margin-top: 40px;
+  padding: 20px;
+  background-color: #f0f0f3;
+  border-radius: 20px;
+  box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.1), -6px -6px 12px rgba(255, 255, 255, 0.5);
+}
