@@ -118,8 +118,7 @@ body {
   outline: none;
   font-size: 16px;
   color: #646161;
-  position: relative; /* Required for styling options */
-  z-index: 1; /* Ensure options are above other content */
+  
 }
 
 .dropdown:focus {

@@ -106,7 +106,7 @@
                 <button class="download-btn" onclick="downloadCSV()">Download</button>
             </div>
             <div class="chart-container neumorphic">
-                <canvas id="radarChart"></canvas>
+                <canvas id="myLineChart"></canvas>
             </div>
             <div class="date-bar">
                 <input type="text" placeholder="Date (MM/DD/YY)" class="date-input">
@@ -114,63 +114,77 @@
             </div>
         </div>
     </div>
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
     <script>
-        const ctx = document.getElementById('radarChart').getContext('2d');
         const data = {
-            labels: ['India', 'Brazil', 'Quantity', 'Count'],
-            datasets: [{
-                label: 'Activity',
-                data: [20, 10, 4, 2],
-                backgroundColor: 'rgba(54, 162, 235, 0.2)',
-                borderColor: 'rgba(54, 162, 235, 1)',
-                borderWidth: 3,
-                pointBackgroundColor: 'rgba(54, 162, 235, 1)',
-                pointBorderColor: '#fff',
-                pointHoverBackgroundColor: '#fff',
-                pointHoverBorderColor: 'rgba(54, 162, 235, 1)'
-            }]
+        labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+        datasets: [{
+            label: 'Dataset 1',
+            data: [65, 59, 80, 81, 56, 55, 40],
+            borderColor: '#007bff',
+            backgroundColor: 'rgba(0, 123, 255, 0.1)',
+            tension: 0.4, 
+            fill: true, 
+            borderWidth: 2 
+        }]
         };
+
+
         const config = {
-            type: 'radar',
-            data: data,
-            options: {
-                elements: {
-                    line: {
-                        borderWidth: 3
-                    }
-                },
-                scales: {
-                    r: {
-                        angleLines: {
-                            display: false
-                        },
-                        suggestedMin: 0,
-                        suggestedMax: 25
-                    }
+        type: 'line',
+        data: data,
+        options: {
+            responsive: true,
+            plugins: {
+            legend: {
+                position: 'top', 
+            },
+            tooltip: {
+                mode: 'index', 
+            }
+            },
+            scales: {
+            x: {
+                display: true,
+                title: {
+                display: true,
+                text: 'Month'
+                }
+            },
+            y: {
+                display: true,
+                title: {
+                display: true,
+                text: 'Value'
                 }
             }
+            }
+        },
         };
-        new Chart(ctx, config);
-        function downloadCSV() {
-            const rows = document.querySelectorAll("table tr");
-            let csvContent = "data:text/csv;charset=utf-8,";
 
-            rows.forEach(row => {
-                const cols = row.querySelectorAll("td, th");
-                const rowData = Array.from(cols).map(col => col.innerText).join(",");
-                csvContent += rowData + "\r\n";
-            });
 
-            const encodedUri = encodeURI(csvContent);
-            const link = document.createElement("a");
-            link.setAttribute("href", encodedUri);
-            link.setAttribute("download", "table_data.csv");
-            document.body.appendChild(link);
-            link.click();
-            document.body.removeChild(link);
-        }
-    </script>
-</body>
-</html>
+        const ctx = document.getElementById('myLineChart').getContext('2d');
+
+
+        const myLineChart = new Chart(ctx, config);
+
+                function downloadCSV() {
+                    const rows = document.querySelectorAll("table tr");
+                    let csvContent = "data:text/csv;charset=utf-8,";
+
+                    rows.forEach(row => {
+                        const cols = row.querySelectorAll("td, th");
+                        const rowData = Array.from(cols).map(col => col.innerText).join(",");
+                        csvContent += rowData + "\r\n";
+                    });
+
+                    const encodedUri = encodeURI(csvContent);
+                    const link = document.createElement("a");
+                    link.setAttribute("href", encodedUri);
+                    link.setAttribute("download", "table_data.csv");
+                    document.body.appendChild(link);
+                    link.click();
+                    document.body.removeChild(link);
+                }
+            </script>
+        </body>
+        </html>
